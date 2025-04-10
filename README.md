@@ -25,12 +25,12 @@ It’s designed to be easily connected with any frontend framework (React, Vue, 
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/ecommerce-backend
+git clone https://github.com/zelalem888/E-commerce-API
 ```
 
 ### 2. Navigate to the Project Directory
 ```bash
-cd ecommerce-backend
+cd E-commerce-API
 ```
 
 ### 3. Install Dependencies
@@ -42,7 +42,7 @@ npm install
 Create a `.env` file in the root directory and add:
 
 ```env
-PORT=3000
+PORT=6969
 JWT_SECRET=your_jwt_secret_key
 JWT_EXPIRES_IN=72h
 DATABASE_URL=your_postgres_connection_string
@@ -58,10 +58,29 @@ npm start
 ## 🌐 Usage
 
 ### Access API Endpoints
-- 🔐 **Auth**: `/api/register`, `/login`
-- 📦 **Products**: `/api/products`, `/newproduct`
-- 🛒 **Cart**: `/api/cart`
-- 💳 **Checkout**: `/api/cart/checkout`
+## User Authentication Routes
+- **POST /api/register**: Register a new user.
+- **POST /api/login**: Log in a user.
+- **POST /api/admin**: Register a new admin.
+- **GET /api/customers**: Retrieve all users for admin users only.
+
+## Cart Routes
+- **POST /api/cart/add**: Add a product to the user's cart.
+- **GET /api/cart/**: View the user's cart items.
+- **DELETE /api/cart/:id**: Remove a product from the user's cart.
+- **GET /cart/payment/**: Proceed to payment and simulate the checkout process.
+
+## Product Routes (Admin Only)
+- **POST /api/newproduct**: Add a new product to the store.
+- **POST /api/search**: Admin searches for products by various criteria.
+- **GET /api/products**: View all products.
+- **GET /api/products/:id**: View a specific product.
+- **PUT /api/products/:id**: Update the details of an existing product.
+- **DELETE /api/products/:id**: Delete a product from the store.
+
+## Checkout & Payment Routes
+- **POST /checkout**: Proceed to checkout and simulate payment.
+
 
 Use this header when accessing protected routes:
 
